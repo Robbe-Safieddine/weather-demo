@@ -2,7 +2,7 @@
 
 body {
   margin: 50px auto;
-  background-image: url('/images/weather.png');
+  background-image: url("/images/weather.png");
   background-size: cover;
 }
 
@@ -25,4 +25,13 @@ body {
 
 #location {
   display: none;
+}
+
+.forecast-day-box {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  margin: auto;
+  margin-bottom: 10px;
+  height: 30%;
+  width: 30%;
+  padding: 10px;
 }
