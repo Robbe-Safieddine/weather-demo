@@ -1,33 +1,57 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>How is the Weather?</title>
-    <meta name="description” content="A demo PHP app that lets users check the weather. Uses the weather.com API, wunderground.">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" href="/images/sunny.png" />
-    <link rel="stylesheet" href="css/style.css">
 
-    <script
-      src="http://code.jquery.com/jquery-1.12.4.min.js"
-      integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ="
-      crossorigin="anonymous"></script>
-  </head>
+<head>
+  <title>How is the Weather?</title>
+  <meta name="description” content=" A demo PHP app that lets users check the weather. Uses the weather.com API,
+    wunderground.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/png" href="/images/sunny.png" />
+  <link rel="stylesheet" href="css/style.css">
 
-  <body>
-    <div class="center">
-      <h1 class="text-center">How's the Weather?</h1>
-      <form id="search-weather">
-        <input type="text" id="search" />
-        <input type="submit" id="submit"></input>
-      </form>
+  <script src="http://code.jquery.com/jquery-1.12.4.min.js"
+    integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+  <script type="text/javascript" src="js/weather.js"></script>
+</head>
 
-      <div class="result row text-center">
-        <img class="weather_icon" src="images/trans.png" />
-        <div id="location">Current weather in <span id="city"></span>, <span id="state"></span>.</div>
-        <div class="description"></div>
+<body>
+  <div class="center">
+    <h1 class="text-center">How's the Weather?</h1>
+    <form id="search-weather">
+      <input type="text" id="search" />
+      <input type="submit" id="submit">
+
+      <!--Created selectbox buttons-->
+      <div id="selector container">
+        <input name="viewSelector" id="weatherDisplay" type="checkbox" value="Forecast">3 Day Forecast</input>
       </div>
-    </div>
 
-    <script src="js/weather.js"></script>
-  </body>
+
+    </form>
+
+    <div class="result row text-center">
+      <img class="weather_icon" src="images/trans.png" />
+      <div id="location">Current weather in <span id="city"></span>, <span id="state"></span>.</div>
+      <div class="description"></div>
+
+      <div class="current">
+        <div class="weather-box">
+          <img class="weather_icon" src="images/trans.png" />
+          <div class="description"></div>
+        </div>
+      </div>
+
+      <div id="forecast" class="forecast">
+
+
+
+        <!--This is where we plan on switching views(hide one or the other depending on which button is
+    clicked OR Switch views depending on what value the radio buttons return)-->
+        <!-- <div id='weatherContainer'>
+
+        </div> -->
+
+
+</body>
+
 </html>

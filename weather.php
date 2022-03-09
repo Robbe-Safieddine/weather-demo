@@ -5,8 +5,8 @@
 
   // API URL.
   // You can register for free to get your own api key (fb0... below). 
-  $url = "http://api.weatherapi.com/v1/current.json?key=fb0b4c5c22d04c22be2202032210112&aqi=no&q=";
-
+  //$currentUrl = "http://api.weatherapi.com/v1/current.json?key=fb0b4c5c22d04c22be2202032210112&aqi=no&q=";
+  $url = "http://api.weatherapi.com/v1/forecast.json?key=9ed229a4194e4dfab18203044221001&aqi=no&days=3&q=";
   // Check and filter query parameters.
   $query = filter_input(INPUT_GET, 'query', FILTER_DEFAULT);
 
@@ -14,8 +14,9 @@
     $query = urlencode($query);
 
     // Call the api with the user input query (zip, city, etc.).
-    $data = file_get_contents($url . $query);
-    $parsed = json_decode($data);
+      $data = file_get_contents($url . $query);
+      $parsed = json_decode($data);
+
 
     // You can use PHP's error_log to output a string to the log for debugging.
     // error_log($parsed->location->name);
@@ -25,6 +26,6 @@
     $result['icon_url'] = $parsed->current->condition->icon;
     $result['city'] = $parsed->location->name;
     $result['state'] = $parsed->location->region;
-    header('Content-Type: application/json');
+    $result['forecast'] = $parsed->forecast->forecastday;
     echo json_encode($result);
   }
